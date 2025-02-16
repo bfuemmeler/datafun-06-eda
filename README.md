@@ -1,6 +1,12 @@
 # datafun-06-eda
 Project 6 EDA
+# Exploratory Data Analysis
+# Dataset "tips" https://github.com/mwaskom/seaborn-data/commit/799924f46906146ad36b8b1c27d83e51dd8b411a
 
+# Objective
+Perform and publish a custom EDA project to demonstrate skills with Jupyter, pandas, Seaborn and popular tools for data analytics. The notebook should tell a data story and visually present findings in a clear and engaging manner.
+
+## Initial Project Setup
 ## Commands Used to update GitHub- use frequently throughout
 
 ```
