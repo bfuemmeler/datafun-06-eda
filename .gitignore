@@ -11,3 +11,6 @@ __pycache__/
 
 # macOS system files
 .DS_Store
+
+# jupyter notebook checkpoints file
+.ipynb_checkpoints/
