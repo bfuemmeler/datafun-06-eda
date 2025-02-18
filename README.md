@@ -2,6 +2,7 @@
 Project 6 EDA
 # Exploratory Data Analysis
 # Dataset "tips" https://github.com/mwaskom/seaborn-data/commit/799924f46906146ad36b8b1c27d83e51dd8b411a
+# Dataset includes "total_bill", "tip", "sex", "smoker", "day", "time", "size"
 
 # Objective
 Perform and publish a custom EDA project to demonstrate skills with Jupyter, pandas, Seaborn and popular tools for data analytics. The notebook should tell a data story and visually present findings in a clear and engaging manner.
@@ -23,15 +24,59 @@ python -m venv .venv
 ## Install Packages into requirements.txt
 # copy & paste into .txt file
 ```
-flask
-requests
-pandas
-numpy
+jupyterlab_widgets
+pandas as pd
+matplotlib.pyplot as plt
+seaborn as sns
+
+##  Type hint for Axes object (basic plot type returned by Seaborn)
+# A seaborn plot is a set of axes and you can set the title, labels, etc. on the axes.
+
+from matplotlib.axes import Axes
 ```
 # run to install into requirements.txt
 python -m pip install -r requirements.txt
 
 # run to update into requirements.txt
 python -m pip install <package_name>
+```
+```
+# Load the dataset into a pandas DataFrame - adjust this process for your custom data
+df = sns.load_dataset('tips')
+
+# Inspect first rows of the DataFrame
+print(df.head())
+```
+```
+# Inspect histogram by numerical column
+df['tip'].hist()
+
+# Inspect histograms for all numerical columns
+df.hist()
+
+# Show all plots
+plt.show()
+```
+```
+## Begin to analyze and manipulate data
+
+# Inspect value counts by categorical column
+df['sex'].value_counts()
+
+# Inspect value counts for all categorical columns
+for col in df.select_dtypes(include=['object', 'category']).columns:
+    # Display count plot
+    sns.countplot(x=col, data=df)
+    plt.title(f'Distribution of {col}')
+    plt.show()
+
+# Show all plots
+plt.show()
+
+## Add markdown fields to describe each group of graphs and how you've analyzed them.
+
+
+
+
 
 
