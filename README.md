@@ -72,8 +72,35 @@ for col in df.select_dtypes(include=['object', 'category']).columns:
 
 # Show all plots
 plt.show()
-
+```
 ## Add markdown fields to describe each group of graphs and how you've analyzed them.
+```
+## Rename column "sex" to read "gender"
+df.rename(columns={'sex': 'Gender'}, inplace=True)
+
+print(df)
+```
+```
+## Add column for Tip % of Total Bill
+# Load dataset
+tips = sns.load_dataset("tips")
+
+# Create a new column for tip percentage
+tips["tip_pct"] = (tips["tip"] / tips["total_bill"]) * 100
+
+# Display the first few rows
+print(tips.head())
+```
+```
+## Display a scatterplot
+# Show the Average % vs Total Bill, looking at the dinner vs lunch shift
+
+sns.scatterplot(x="total_bill", y="tip_pct", data=tips, hue="time")
+plt.axhline(tips["tip_pct"].mean(), color="red", linestyle="--", label="Avg Tip %")
+plt.legend()
+plt.title("Tip Percentage vs. Total Bill")
+plt.show()
+```
 
 
 
